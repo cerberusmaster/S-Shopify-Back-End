@@ -8,10 +8,10 @@ connectDatabase()
 
 const app = express()
 
-// routes
 app.use(require('./src/routes'))
 
-// start the express server
 app.listen(process.env.SERVER_PORT, () => {
     console.log(`server started at ${process.env.APP_URL}:${process.env.SERVER_PORT}`)
 })
+
+export default app
