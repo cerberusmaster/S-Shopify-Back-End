@@ -7,9 +7,9 @@ import app from "../app"
 describe("Test app.ts", () => {
     it('should return 500 & valid response if auth rejects with an error', done => {
         request(app).get("/").expect(404).end((err, res) => {
-            // if (err) return done(err)
-            // expect(res.body).toMatchObject({ error: { type: 'internal_server_error', message: 'Internal Server Error' } })
-            // done()
+            if (err) return done(err)
+            expect(res.body).toMatchObject({ error: { type: 'internal_server_error', message: 'Internal Server Error' } })
+            done()
         })
     })
 
